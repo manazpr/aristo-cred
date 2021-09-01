@@ -14,14 +14,16 @@ const Profile = () => {
   if (error) return <ErrorMessage message="Sign in to CRED" />;
   if (!data) return <LoadingSpinner />;
 
-  const { profile } = data;
+  const profile = data;
+
   console.log(data);
   return (
-<div> <br /><h5>First Name</h5>
-<h5>Last Name</h5>
-<h5>Email </h5>
-<h5>Trust Score</h5>
-<h5>Coins</h5>
+<div> <br /><h5>First Name -{profile.first_name}</h5>
+<h5>Last Name {profile.last_name}</h5>
+<h5>Email - {profile.email} </h5>
+<h5>Email - {profile.phone} </h5>
+<h5>Trust Score -{profile.trust_score}</h5>
+<h5>Coins- {profile.coins}</h5>
 
   </div>
   );
