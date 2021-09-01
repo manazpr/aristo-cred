@@ -1,0 +1,35 @@
+{
+  "name": "aristo-cred",
+  "version": "1.0.0",
+  "author": "manaz",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
+    "@solana/wallet-adapter-base": "^0.5.1",
+    "@solana/wallet-adapter-material-ui": "^0.8.3",
+    "@solana/wallet-adapter-react": "^0.8.3",
+    "@solana/wallet-adapter-wallets": "^0.7.3",
+    "@solana/web3.js": "^1.24.1",
+    "axios": "^0.19.2",
+    "emotion": "^10.0.27",
+    "emotion-server": "^10.0.27",
+    "lazysizes": "^5.2.2",
+    "next": "^9.5.1",
+    "notistack": "^1.0.10",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "swr": "^0.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.27",
+    "@types/react": "^16.9.44",
+    "typescript": "^3.9.7"
+  }
+}
