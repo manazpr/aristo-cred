@@ -12,8 +12,6 @@ const WalletConnect = dynamic(
 )
 
 
-
-
 const IndexPageContainer = styled("div")`
 background: #212426
 `;

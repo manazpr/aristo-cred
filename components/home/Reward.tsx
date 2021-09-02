@@ -8,6 +8,7 @@ import CredAPI from "../../lib/api/user";
 const Rewards = () => {
   const [isLoading, setLoading] = React.useState(false);
   const [errors, setErrors] = React.useState([]);
+  const [coins, setCoins ] = React.useState([]);
   
 
   
@@ -38,7 +39,7 @@ const Rewards = () => {
           <button
             className="btn btn-lg btn-primary pull-xs-right"
             type="submit"
-            value="10000"
+            value={coins}
             disabled={isLoading}
           
          
