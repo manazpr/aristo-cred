@@ -12,6 +12,7 @@ const WalletConnect = dynamic(
 )
 
 
+
 const IndexPageContainer = styled("div")`
 background: #212426
 `;
@@ -166,8 +167,7 @@ const IndexPage = () => (
           <RewardsContainer>
          
           <RewardsTitle>Cred Rewards</RewardsTitle>
-          <Rewards />
-        
+      <Rewards />
           </RewardsContainer>
 
         </MainContent> 

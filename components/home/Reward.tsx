@@ -4,36 +4,20 @@ import { mutate } from "swr";
 
 import ListErrors from "../common/ListErrors";
 import CredAPI from "../../lib/api/user";
+import SendSol from "lib/utils/web3";
 
 const Rewards = () => {
   const [isLoading, setLoading] = React.useState(false);
-  const [errors, setErrors] = React.useState([]);
   const [coins, setCoins ] = React.useState([]);
   
 
   
-  const handleSubmit = async (e) => {
-    setLoading(true);
-
-    try {
-      const { data, status } = await CredAPI.burn(coins);
-      if (data?.success == true) {
-        console.log(JSON.stringify(data));
-        }
-
-      if (status !== 200 && data?.errors) {
-        setErrors(data.errors);
-      }
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setLoading(false);
-    }
+  const handleSendSol = async () => {
+      await SendSol();
   };
 
   return (
     <>
-      <ListErrors errors={errors} />
 
       <input type="hidden" name="action" value="submit" />
           <button
@@ -51,6 +35,7 @@ const Rewards = () => {
             type="submit"
             value="25000"
             disabled={isLoading}
+            onClick={handleSendSol}
           >
             Burn 25,000 CRED Coins
           </button>
