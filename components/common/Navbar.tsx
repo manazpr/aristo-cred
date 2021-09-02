@@ -88,7 +88,7 @@ const Navbar = () => {
     mutate("user", null);
     mutate("profile", null);
     mutate("token", null);
-    Router.push(`/`).then(() => trigger("user"));
+    Router.push(`/user/login`).then(() => trigger("user"));
   };
 
   const handleLogin = async (e) => {

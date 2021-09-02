@@ -13,19 +13,18 @@ const Profile = () => {
   const { data, error } = useSWR(`${SERVER_BASE_URL}/profile`, fetcher);
   if (error) return <ErrorMessage message="Sign in to CRED" />;
   if (!data) return <LoadingSpinner />;
-
   const profile = data;
 
-  console.log(data);
-  return (
+  return (  
 <div> <br /><h5>First Name -{profile.first_name}</h5>
 <h5>Last Name {profile.last_name}</h5>
 <h5>Email - {profile.email} </h5>
 <h5>Email - {profile.phone} </h5>
 <h5>Trust Score -{profile.trust_score}</h5>
 <h5>Coins- {profile.coins}</h5>
+</div>
 
-  </div>
+
   );
 };
 

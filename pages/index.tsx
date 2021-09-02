@@ -2,8 +2,17 @@ import React, { FC } from 'react';
 import styled from "@emotion/styled";
 import Head from "next/head";
 import Profile from "components/home/Profile";
-import Wallet from "components/home/ConnectWallet";
 import Rewards from "components/home/Reward";
+import dynamic from 'next/dynamic';
+
+
+const WalletConnect = dynamic(
+  () => import('../components/home/ConnectWallet'),
+  {ssr: false }
+)
+
+
+
 
 const IndexPageContainer = styled("div")`
 background: #212426
@@ -122,6 +131,8 @@ margin-top: 0;
 `;
 
 
+
+
 const IndexPage = () => (
 
  
@@ -141,9 +152,8 @@ const IndexPage = () => (
          
           <ConnectWalletTitle>Connect Wallet</ConnectWalletTitle>
          
-        
-       
-         
+    < WalletConnect/>
+    
           </ConnectWalletContainer>
 
           
@@ -151,7 +161,7 @@ const IndexPage = () => (
           <SidebarContainer>
           <SidebarPresenter>
               <SidebarTitle>Profile</SidebarTitle>
-            <Profile />
+              <Profile />
             </SidebarPresenter>
           </SidebarContainer>
          
