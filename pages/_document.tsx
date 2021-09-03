@@ -36,6 +36,12 @@ class MyDocument extends Document<IProps> {
             property="og:description"
             content=""/>    
           <meta name="theme-color" content="#212426" />
+          <link rel="manifest" href="/manifest.json" />
+          <link rel="stylesheet" href="//demo.productionready.io/main.css" />
+          <link
+            rel="stylesheet"
+            href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+          />
           <link rel="stylesheet" href="https://cdn.rawgit.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css"></link>
           <style
             data-emotion-css={ids.join(" ")}

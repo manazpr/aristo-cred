@@ -5,7 +5,7 @@ import {
     WalletDialogProvider,
     WalletDisconnectButton,
     WalletMultiButton,
-} from '@solana/wallet-adapter-material-ui';
+} from '../Wallets';
 import { useLocalStorage, WalletProvider } from '@solana/wallet-adapter-react';
 import {
     getLedgerWallet,

@@ -1,19 +1,30 @@
 
-import React from "react";
+import React, {useMemo} from "react";
 import { mutate } from "swr";
 
 import ListErrors from "../common/ListErrors";
 import CredAPI from "../../lib/api/user";
 import SendSol from "lib/utils/web3";
+import Router from "next/router";
+
+
+
 
 const Rewards = () => {
   const [isLoading, setLoading] = React.useState(false);
-  const [coins, setCoins ] = React.useState([]);
   
 
-  
   const handleSendSol = async () => {
       await SendSol();
+     try{
+       const { data } = await CredAPI.burn();
+       if (data?.success === true) {
+        Router.push("/");
+        }
+      } catch (error) {
+        console.error(error);
+      }
+
   };
 
   return (
@@ -23,7 +34,7 @@ const Rewards = () => {
           <button
             className="btn btn-lg btn-primary pull-xs-right"
             type="submit"
-            value={coins}
+            onClick={handleSendSol}
             disabled={isLoading}
           
          

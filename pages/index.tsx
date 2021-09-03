@@ -2,14 +2,17 @@ import React, { FC } from 'react';
 import styled from "@emotion/styled";
 import Head from "next/head";
 import Profile from "components/home/Profile";
-import Rewards from "components/home/Reward";
 import dynamic from 'next/dynamic';
+import SendReward from 'components/home/SendReward';
+import Rewards from 'components/home/Reward';
 
 
 const WalletConnect = dynamic(
   () => import('../components/home/ConnectWallet'),
   {ssr: false }
 )
+
+
 
 
 
@@ -36,7 +39,7 @@ const ConnectWalletContainer = styled("div")`
 display: flex;
 flex-direction: column;
 align-items: center;
-padding: 100px 100px; 
+padding: 80px 100px; 
 width: 630px;
 height: 300px;
 background: #212426;
@@ -47,9 +50,9 @@ margin-bottom: 30px
 `;
 
 const ConnectWalletPresenter = styled("div")`
-padding: 5px 10px 10px;
+padding: 0px 10px 10px;
 background: #212426;
-border-radius: 4px;
+border-radius: 10px;
 `;
 
 const ConnectWalletTitle = styled("p")`
@@ -57,7 +60,7 @@ font-family: Gilroy-Bold;
 font-style: normal;
 font-weight: bold;
 font-size: 36px;
-line-height: 22px;
+line-height: 40px;
 margin-top: 0;
   margin-bottom: 0.2rem;
   letter-spacing: 0.005em;
@@ -97,10 +100,10 @@ margin-top: 0;
 `;
 
 const SidebarContainer = styled("div")`
-padding: 50px 50px; 
+padding: 20px 50px; 
 flex: 0 0 25%;
 max-width: 25%;
-height: 300px;
+height: 360px;
 background: #212426;
 box-shadow: inset -6px -6px 12px rgba(255, 255, 255, 0.08), inset 6px 6px 12px rgba(0, 0, 0, 0.18);
 border-radius: 32px;  
@@ -109,7 +112,8 @@ margin-left: 50px
 `;
 
 const SidebarPresenter = styled("div")`
-  padding: 5px 10px 10px;
+  padding: 0px 0px 0px;
+  font-size: 12px;
   background: #0000;
   text-color: white;
   border-radius: 4px;
@@ -148,11 +152,11 @@ const IndexPage = () => (
         <MainContent>
 
           <ConnectWalletContainer>
-         
+         <ConnectWalletPresenter>
           <ConnectWalletTitle>Connect Wallet</ConnectWalletTitle>
          
     < WalletConnect/>
-    
+    </ConnectWalletPresenter>
           </ConnectWalletContainer>
 
           

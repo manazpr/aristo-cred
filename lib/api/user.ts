@@ -64,18 +64,18 @@ login: async (phone) => {
     }
   },
   
-  burn: async (coins) => {
+  burn: async () => {
     const user: any = JSON.parse(window.localStorage.getItem("user"));
     const access_token =user?.access_token;
     try {
       const response = await axios.post(
-        `${SERVER_BASE_URL}/profile`,
-        JSON.stringify({ "coins": coins
+        `${SERVER_BASE_URL}/profile/coins/burn`,
+        JSON.stringify({ "coins": 1000
        }),
         {
-          headers: {
-            'credaccess-secret-key': `${SECRET_KEY}`, 
+          headers: {   
 				    'credaccess-access-token': access_token, 
+            'credaccess-secret-key': `${SECRET_KEY}`,
 				    'Content-Type': 'application/json'
           },
         }
