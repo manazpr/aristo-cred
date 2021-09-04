@@ -16,12 +16,12 @@ const Profile = () => {
   const profile = data;
 
   return (  
-<div> <br /><h5>First Name -{profile.first_name}</h5>
-<h5>Last Name {profile.last_name}</h5>
-<h5>Email - {profile.email} </h5>
-<h5>Email - {profile.phone} </h5>
-<h5>Trust Score -{profile.trust_score}</h5>
-<h5>Coins- {profile.coins}</h5>
+<div> <br /><h5>first Name - {profile.first_name}</h5>
+<h5>last name - {profile.last_name}</h5>
+<h5>email - {profile.email} </h5>
+<h5>phone - {profile.phone} </h5>
+<h5>trust score - {profile.trust_score}</h5>
+<h5>coins - {profile.coins}</h5>
 </div>
 
 

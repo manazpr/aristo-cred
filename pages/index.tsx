@@ -17,17 +17,20 @@ const WalletConnect = dynamic(
 
 
 const IndexPageContainer = styled("div")`
-background: #212426
+background: #212426;
+font-face: Gilroy-Bold;
 `;
 
 const IndexPagePresenter = styled("div")`
   margin: 1.5rem auto 0;
+  font-face: Gilroy-Bold;
   padding: 45px 45px; 
   background: #212426;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
 const MainContent = styled("div")`
+  font-face: Gilroy-Bold;
   display: flex;
   flex-wrap: wrap;
   margin-left: 15px;
@@ -56,10 +59,10 @@ border-radius: 10px;
 `;
 
 const ConnectWalletTitle = styled("p")`
-font-family: Gilroy-Bold;
+font-face: Gilroy-Bold;
 font-style: normal;
 font-weight: bold;
-font-size: 36px;
+font-size: 28px;
 line-height: 40px;
 margin-top: 0;
   margin-bottom: 0.2rem;
@@ -88,11 +91,11 @@ border-radius: 4px;
 `;
 
 const RewardsTitle = styled("p")`
-font-family: Gilroy-Bold;
+font-face: Gilroy-Bold;
 font-style: normal;
 font-weight: bold;
-font-size: 24px;
-line-height: 22px;
+font-size: 28px;
+line-height: 20px;
 margin-top: 0;
   margin-bottom: 0.2rem;
   letter-spacing: 0.005em;
@@ -113,20 +116,18 @@ margin-left: 50px
 
 const SidebarPresenter = styled("div")`
   padding: 0px 0px 0px;
-  font-size: 12px;
+  font-size: 10px;
   background: #0000;
-  text-color: white;
-  border-radius: 4px;
+  color: #CFD0D0;
 `;
 
 
-
 const SidebarTitle = styled("p")`
-font-family: Gilroy-Bold;
+font-face: Gilroy-Bold;
 font-style: normal;
 font-weight: bold;
-font-size: 24px;
-line-height: 22px;
+font-size: 28px;
+line-height: 20px;
 margin-top: 0;
   margin-bottom: 0.2rem;
   letter-spacing: 0.005em;
@@ -153,7 +154,7 @@ const IndexPage = () => (
 
           <ConnectWalletContainer>
          <ConnectWalletPresenter>
-          <ConnectWalletTitle>Connect Wallet</ConnectWalletTitle>
+          <ConnectWalletTitle>connect wallet</ConnectWalletTitle>
          
     < WalletConnect/>
     </ConnectWalletPresenter>
@@ -163,14 +164,14 @@ const IndexPage = () => (
       
           <SidebarContainer>
           <SidebarPresenter>
-              <SidebarTitle>Profile</SidebarTitle>
+              <SidebarTitle>profile</SidebarTitle>
               <Profile />
             </SidebarPresenter>
           </SidebarContainer>
          
           <RewardsContainer>
          
-          <RewardsTitle>Cred Rewards</RewardsTitle>
+          <RewardsTitle>cred rewards</RewardsTitle>
       <Rewards />
           </RewardsContainer>
 

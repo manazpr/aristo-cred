@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 interface NavLinkProps {
   href: string;
   as: string;
-  onClick?: () => void;
+
   children: React.ReactNode;
 }
 
@@ -25,12 +25,12 @@ const Anchor = styled("a")`
   }
 `;
 
-const NavLink = ({ href, as, onClick, children }: NavLinkProps) => {
+const NavLink = ({ href, as, children }: NavLinkProps) => {
   const router = useRouter();
   const { asPath } = router;
 
   return (
-    <Link href={href} as={as} passHref onClick={onClick}>
+    <Link href={href} as={as} passHref>
       <Anchor>
         
         {children}

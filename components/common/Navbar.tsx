@@ -51,13 +51,13 @@ const NavbarPresenter = styled("div")`
 
 const Logo = styled(CustomLink)`
   float: left;
-  font-family: Gilroy-Regular !important;
-  font-size: 1.5rem !important;
-  margin-right: 2rem !important;
-  padding-top: 0 !important;
+  font-face: Gilroy-Bold;
+  font-size: 1.5rem;
+  margin-right: 2rem ;
+  padding-top: 0 ;
   padding-bottom: 0.25rem;
   color: rgba(249, 211, 180, 0.55);
-  !important;
+  
 `;
 
 const NavbarList = styled("ul")`
