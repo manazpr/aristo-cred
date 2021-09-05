@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme: Theme) => ({
                 lineHeight: theme.spacing(5) + 'px',
             },
             '& .MuiIconButton-root': {
-                flexShrink: 1,
+                flexShrink: 0,
                 padding: theme.spacing(),
                 marginRight: theme.spacing(-1),
                 color: theme.palette.grey[500],
@@ -84,14 +84,14 @@ export interface WalletDialogProps extends Omit<DialogProps, 'title' | 'open'> {
 
 export const WalletDialog: FC<WalletDialogProps> = ({
     title = 'Select your wallet',
-    featuredWallets = 2,
+    featuredWallets = 1,
     onClose,
     ...props
 }) => {
     const styles = useStyles();
     const { wallets, select } = useWallet();
     const { open, setOpen } = useWalletDialog();
-    const [expanded, setExpanded] = useState(false);
+    const [expanded, setExpanded] = useState(true);
 
     const [featured, more] = useMemo(
         () => [wallets.slice(0, featuredWallets), wallets.slice(featuredWallets)],

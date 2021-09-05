@@ -64,13 +64,13 @@ login: async (phone) => {
     }
   },
   
-  burn: async () => {
+  burn: async (coins) => {
     const user: any = JSON.parse(window.localStorage.getItem("user"));
     const access_token =user?.access_token;
     try {
       const response = await axios.post(
         `${SERVER_BASE_URL}/profile/coins/burn`,
-        JSON.stringify({ "coins": 1000
+        JSON.stringify({ "coins": coins
        }),
         {
           headers: {   

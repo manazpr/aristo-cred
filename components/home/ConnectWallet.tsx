@@ -1,4 +1,3 @@
-import { FormControlLabel, Switch,Tooltip } from '@material-ui/core';
 import {
     WalletDialogProvider,
     WalletDisconnectButton,
@@ -10,21 +9,19 @@ import {
     getPhantomWallet,
    
 } from '@solana/wallet-adapter-wallets';
-import { useSnackbar } from 'notistack';
-import{ useCallback, useMemo } from 'react';
+import{ useMemo } from 'react';
 
 const WalletConnect = () => {
-    const [autoConnect, setAutoConnect] = useLocalStorage('autoConnect', false);
-    const wallets = useMemo(
+    const [autoConnect] = useLocalStorage('autoConnect', true);
+    const wallet = useMemo(
         () => [
             getPhantomWallet(),
-        ],
-        []
+        ], []
     );
 
 
     return (
-        <WalletProvider wallets={wallets} autoConnect={autoConnect}>
+        <WalletProvider wallets={wallet} autoConnect={autoConnect}>
             <WalletDialogProvider>
                                 <WalletMultiButton />
                                 <WalletDisconnectButton /> 
