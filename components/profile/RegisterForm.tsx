@@ -1,6 +1,6 @@
 import Router from "next/router";
 import React from "react";
-
+import { Button } from "../buttons/SynthButton.style"
 import ListErrors from "../common/ListErrors";
 import CredAPI from "../../lib/api/user";
 
@@ -61,7 +61,7 @@ const RegisterForm = () => {
             <input
               className="form-control form-control-lg"
               type="text"
-              placeholder="Enter your first name"
+              placeholder="enter your first name"
               value={first_name}
               onChange={handleFirstnameChange}
             />
@@ -71,7 +71,7 @@ const RegisterForm = () => {
             <input
               className="form-control form-control-lg"
               type="text"
-              placeholder="Enter your last name"
+              placeholder="enter your last name"
               value={last_name}
               onChange={handleLastnameChange}
             />
@@ -81,19 +81,19 @@ const RegisterForm = () => {
             <input
               className="form-control form-control-lg"
               type="email"
-              placeholder="Email"
+              placeholder="email"
               value={email}
               onChange={handleEmailChange}
             />
           </fieldset>
 
-          <button
+          <Button
             className="btn btn-lg btn-primary pull-xs-right"
             type="submit"
             disabled={isLoading}
           >
             Sign up
-          </button>
+          </Button>
         </fieldset>
       </form>
     </>

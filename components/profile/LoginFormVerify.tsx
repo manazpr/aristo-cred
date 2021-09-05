@@ -1,7 +1,7 @@
 import Router from "next/router";
 import React from "react";
 import { mutate } from "swr";
-
+import { Button } from "../../components/buttons/SynthButton.style";
 import ListErrors from "../common/ListErrors";
 import CredAPI from "../../lib/api/user";
 
@@ -58,19 +58,19 @@ const LoginFormVerify = () => {
             <input
               className="form-control form-control-lg"
               type="text"
-              placeholder="Enter your 4-digit Otp"
+              placeholder="enter your 4-digit OTP"
               value={otp}
               onChange={handleOtpChange}
             />
           </fieldset>
 
-          <button
+          <Button
             className="btn btn-lg btn-primary pull-xs-right"
             type="submit"
             disabled={isLoading}
           >
             Submit
-          </button>
+          </Button>
         </fieldset>
       </form>
     </>

@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import React from "react";
 import Router from "next/router";
 import useSWR, {mutate, trigger} from "swr";
-
+import { Button } from "../buttons/SynthButtonTop.style"
 import CustomLink from "./CustomLink";
 import Maybe from "./Maybe";
 import checkLogin from "lib/utils/checkLogin";
@@ -108,16 +108,16 @@ const Navbar = () => {
           <Maybe test={isLoggedIn}>
 
             <NavbarItem>
-              <button onClick={handleLogout}>
-                Logout</button>
+              <Button onClick={handleLogout}>
+                Logout</Button>
             </NavbarItem>
           </Maybe>
           <Maybe test={!isLoggedIn}>
             <NavbarItem>
             
-            <button onClick={handleLogin}>
+            <Button onClick={handleLogin}>
                 Sign in CRED
-                </button> 
+                </Button> 
             
             </NavbarItem>
            

@@ -1,6 +1,7 @@
 import Router from "next/router";
 import React from "react";
 import { mutate } from "swr";
+import { Button } from "../../components/buttons/SynthButton.style";
 
 import ListErrors from "../common/ListErrors";
 import CredAPI from "../../lib/api/user";
@@ -47,19 +48,19 @@ const LoginForm = () => {
             <input
               className="form-control form-control-lg"
               type="tel"
-              placeholder="Enter your phone number"
+              placeholder="enter your phone number"
               value={phone}
               onChange={handlePhoneChange}
             />
           </fieldset>
 
-          <button
+          <Button
             className="btn btn-lg btn-primary pull-xs-right"
             type="submit"
             disabled={isLoading}
           >
             Send OTP
-          </button>
+          </Button>
         </fieldset>
       </form>
     </>

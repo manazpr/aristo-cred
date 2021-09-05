@@ -2,8 +2,6 @@
 const web3 = require("@solana/web3.js");
 
 const amount = 1000;
-
-// Address: 9vpsmXhZYMpvhCKiVoX5U8b1iKpfwJaFpPEEXF7hRm9N
 const SECRET_KEY = new Uint8Array([
     37, 21, 197, 185, 105, 201, 212, 148, 164, 108, 251, 159, 174, 252, 43, 246,
     225, 156, 38, 203, 99, 42, 244, 73, 252, 143, 34, 239, 15, 222, 217, 91, 132,
@@ -16,9 +14,7 @@ const SendNFT = async () => {
     const connection = new web3.Connection(web3.clusterApiUrl("devnet"));
     // Construct a `Keypair` from secret key
     const from = web3.Keypair.fromSecretKey(SECRET_KEY);
-    // Generate a new random public key
-    //const user = "BPLBUUGAtxe7X1RyotPvy6bhpj4DXwPq4PW3Q9FBRFfY";
-    // Add transfer instruction to transaction
+   
     const transaction = new web3.Transaction().add(
         web3.SystemProgram.transfer({
             fromPubkey: from.publicKey,

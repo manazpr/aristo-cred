@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import Head from "next/head";
 import Profile from "components/home/Profile";
 import dynamic from 'next/dynamic';
-import SendReward from 'components/home/SendReward';
+
 
 
 const WalletConnect = dynamic(
@@ -15,10 +15,6 @@ const Rewards = dynamic(
   () => import('../components/home/Reward'),
   {ssr: false }
 )
-
-
-
-
 
 const IndexPageContainer = styled("div")`
 background: #212426;
@@ -107,6 +103,8 @@ margin-top: 0;
 `;
 
 const SidebarContainer = styled("div")`
+float: right;
+flex-wrap: wrap;
 padding: 20px 50px; 
 flex: 0 0 25%;
 max-width: 25%;
@@ -168,7 +166,7 @@ const IndexPage = () => (
       
           <SidebarContainer>
           <SidebarPresenter>
-              <SidebarTitle>profile</SidebarTitle>
+              <SidebarTitle></SidebarTitle>
               <Profile />
             </SidebarPresenter>
           </SidebarContainer>
@@ -176,6 +174,7 @@ const IndexPage = () => (
           <RewardsContainer>
          
           <RewardsTitle>cred rewards</RewardsTitle>
+         
       <Rewards />
           </RewardsContainer>
 

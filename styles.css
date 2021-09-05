@@ -176,6 +176,7 @@ input::-moz-focus-inner {
 
 input {
   line-height: normal;
+
 }
 
 input[type="checkbox"],
@@ -325,7 +326,7 @@ body {
   font-family: Gilroy;
   font-size: 1rem;
   line-height: 1.5;
-  color: #373a3c;
+  color: whitesmoke;
   background-color: #212426;
 }
 
@@ -345,7 +346,7 @@ h6 {
 
 p {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 abbr[title],
@@ -451,15 +452,6 @@ textarea {
 table {
   background-color: transparent;
 }
-
-caption {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  color: #818a91;
-  text-align: left;
-  caption-side: bottom;
-}
-
 th {
   text-align: left;
 }
