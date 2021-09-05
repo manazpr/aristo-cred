@@ -4,11 +4,15 @@ import Head from "next/head";
 import Profile from "components/home/Profile";
 import dynamic from 'next/dynamic';
 import SendReward from 'components/home/SendReward';
-import Rewards from 'components/home/Reward';
 
 
 const WalletConnect = dynamic(
   () => import('../components/home/ConnectWallet'),
+  {ssr: false }
+)
+
+const Rewards = dynamic(
+  () => import('../components/home/Reward'),
   {ssr: false }
 )
 

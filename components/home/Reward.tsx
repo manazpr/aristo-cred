@@ -4,19 +4,21 @@ import { mutate } from "swr";
 
 import ListErrors from "../common/ListErrors";
 import CredAPI from "../../lib/api/user";
-import SendSol from "lib/utils/web3";
+import SendSol from "lib/utils/SendSol";
 import Router from "next/router";
-
+import { useWallet } from "@solana/wallet-adapter-react";
 
 
 
 const Rewards = () => {
+if (typeof window === "undefined") return {};
+
   const [isLoading, setLoading] = React.useState(false);
-  
 
   const handleSendSol = async () => {
-      await SendSol();
-     try{
+    await SendSol();
+     try{ 
+       
        const { data } = await CredAPI.burn();
        if (data?.success === true) {
         Router.push("/");

@@ -11,19 +11,18 @@ const DEMO_FROM_SECRET_KEY = new Uint8Array([
     121, 93, 189, 55, 165, 129, 196, 104, 25, 157, 209, 168, 165, 149,
 ]);
 const SendSol = async () => {
+    const PublicKey = await window.solana.publicKey.toString();
     // Connect to cluster
     const connection = new web3.Connection(web3.clusterApiUrl("devnet"));
     // Construct a `Keypair` from secret key
     const from = web3.Keypair.fromSecretKey(DEMO_FROM_SECRET_KEY);
     // Generate a new random public key
-    const user = "BPLBUUGAtxe7X1RyotPvy6bhpj4DXwPq4PW3Q9FBRFfY";
-   
-    
+    //const user = "BPLBUUGAtxe7X1RyotPvy6bhpj4DXwPq4PW3Q9FBRFfY";
     // Add transfer instruction to transaction
     const transaction = new web3.Transaction().add(
         web3.SystemProgram.transfer({
             fromPubkey: from.publicKey,
-            toPubkey: user,
+            toPubkey: PublicKey,
             lamports: web3.LAMPORTS_PER_SOL / amount,
         })
     );
